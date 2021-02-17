@@ -5,7 +5,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+import org.springframework.stereotype.Service;
+
 @Entity
+@Service
 public class UserDao {
 
 	@Id
@@ -14,6 +17,7 @@ public class UserDao {
 	private String email;
 	private String gender;
 	private String mobileNumber;
+	private boolean active;
 	private String occupation;
 	private String password;
 	private String userName;
@@ -72,6 +76,12 @@ public class UserDao {
 	}
 	public void setAddress_id(int address_id) {
 		this.address_id = address_id;
+	}
+	public boolean isActive() {
+		return active;
+	}
+	public void setActive(boolean active) {
+		this.active = active;
 	}
 	
 }

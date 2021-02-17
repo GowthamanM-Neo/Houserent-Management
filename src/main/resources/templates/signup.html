@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link th:href="@{/styles/css/signup.css}" rel="stylesheet">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="row" style="align-items:center">
+<div class="col-md-4">
+<h2 class="text-heading text-center">SIGNUP</h2>
+			<form method="POST" th:action="@{/signup}" modelAttribute="userdata">
+				<div class="input-group mb-3">
+					<span class="input-group-text" id="icon1"><i class="fa fa-user"></i></span> <input type="text"
+						class="form-control" placeholder="Username"
+						th:onfocus="changeEmail(event,'1')" th:onblur="clearLine(event,'1')" 
+						name="userName">
+				</div>
+				<div class="input-group mb-3">
+					<span class="input-group-text" id="icon2"><i
+						class="fa fa-phone"></i></span> <input type="text" class="form-control"
+						placeholder="Mobile Number" th:onfocus="changeEmail(event,'2')" th:onblur="clearLine(event,'2')"
+						name="mobileNumber">
+				</div>
+				<div class="input-group mb-3">
+					<span class="input-group-text" id="icon3"><i
+						class="fa fa-users"></i></span> <select class="form-control"
+						id="exampleFormControlSelect1" th:onfocus="changeEmail(event,'3')"
+						th:onblur="clearLine(event,'3')" name="gender">
+						<option>Male</option>
+						<option>Female</option>
+					</select>
+				</div>
+				<div class="input-group mb-3">
+					<span class="input-group-text" id="icon4"><i
+						class="fa fa-briefcase"></i></span> <input type="text" class="form-control"
+						placeholder="Occupation" th:onfocus="changeEmail(event,'4')" th:onblur="clearLine(event,'4')"
+						name="occupation">
+				</div>
+				<div class="input-group mb-3">
+					<span class="input-group-text" id="icon5"><i
+						class="fa fa-paper-plane"></i></span> <input type="email" class="form-control"
+						placeholder="Email Address" th:onfocus="changeEmail(event,'5')" th:onblur="clearLine(event,'5')">
+				</div>
+				<div class="input-group mb-3">
+					<span class="input-group-text" id="icon6"><i
+						class="fa fa-lock"></i></span> <input type="password" class="form-control"
+						placeholder="Password" th:onfocus="changeEmail(event,'6')" th:onblur="clearLine(event,'6')">
+				</div>
+				<div class="input-group mb-3">
+					<span class="input-group-text" id="icon7"><i
+						class="fa fa-expeditedssl"></i></span> <input type="password" class="form-control"
+						placeholder="Confirm Password" th:onfocus="changeEmail(event,'7')" th:onblur="clearLine(event,'7')">
+				</div>
+				<div class="input-group mb-3">
+					<span class="input-group-text" id="icon8"><i
+						class="fa fa-user"></i></span> <select class="form-control"
+						th:onfocus="changeEmail(event,'8')"
+						th:onblur="clearLine(event,'8')">
+						<option>Buyer</option>
+						<option>Seller</option>
+					</select>
+				</div>
+				<div class="input-group mb-3">
+					<span class="input-group-text" id="icon9"><i
+						class="fa fa-address-card"></i></span> <input type="password" class="form-control"
+						placeholder="doorNo,area,street,district,state,pincode" 
+						th:onfocus="changeEmail(event,'9')" th:onblur="clearLine(event,'9')">
+				</div>
+				<input type="submit" value="SIGN UP" id="button">
+			</form>
+			<div class="end text-center">
+			<small>Already have an account? <a style="color:rgb(25,170,141)" th:href="@{/login}">Login here</a></small>
+			</div>
+		</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script th:inline="javascript">
+const password = document.getElementById('password');
+
+function changeEmail(e,s){
+var item = document.getElementById('icon'+s);
+    item.style.borderBottom = "2px solid rgb(25,170,141)";
+}
+function clearLine(e,s){
+var item = document.getElementById("icon"+s);
+    item.style.borderBottom = "2px solid grey";
+    }
+
+
+
+    
+</script>
+</body>
+</html>

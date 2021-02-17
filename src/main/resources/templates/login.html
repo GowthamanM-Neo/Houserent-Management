@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link th:href="@{/styles/css/login.css}" rel="stylesheet">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="row" style="align-items:center">
+<div class="col-md-4">
+<h2 class="text-heading text-center">LOGIN</h2>
+			<form>
+				<div class="input-group mb-3">
+					<span class="input-group-text" id="icon1"><i
+						class="fa fa-paper-plane"></i></span> <input type="email"
+						class="form-control" placeholder="Email Address"
+						th:onfocus="changeEmail(event,'1')" th:onblur="clearLine(event,'1')">
+				</div>
+				<div class="input-group mb-3">
+					<span class="input-group-text" id="icon2"><i
+						class="fa fa-lock"></i></span> <input type="password" class="form-control"
+						placeholder="Password" th:onfocus="changeEmail(event,'2')" th:onblur="clearLine(event,'2')">
+				</div>
+				<input type="submit" value="SIGN IN" id="button">
+			</form>
+			<div class="text-center">
+			<small>Create a new account? <a style="color:rgb(25,170,141)" th:href="@{/signup}">SignUp here</a></small>
+			</div>
+		</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script th:inline="javascript">
+const password = document.getElementById('password');
+
+function changeEmail(e,s){
+var item = document.getElementById('icon'+s);
+    item.style.borderBottom = "2px solid rgb(25,170,141)";
+}
+function clearLine(e,s){
+var item = document.getElementById("icon"+s);
+    item.style.borderBottom = "2px solid grey";
+    }
+
+
+
+    
+</script>
+</body>
+</html>
