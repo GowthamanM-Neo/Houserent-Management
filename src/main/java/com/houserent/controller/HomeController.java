@@ -22,7 +22,14 @@ public class HomeController {
 	UserRepo UserRepo;
 	@GetMapping("/")
 	public String homePage() {
-		
-		return "index";
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		boolean hasBuyerRole = authentication.getAuthorities().stream()
+		          .anyMatch(r -> r.getAuthority().toString().equals("ROLE_BUYER"));
+		System.out.println(authentication.getAuthorities().stream().collect(Collectors.toList()));
+		if(hasBuyerRole) {
+			return "redirect:/signup";
+		}else {
+			return "redirect:/login";
+		}
 	}
 }

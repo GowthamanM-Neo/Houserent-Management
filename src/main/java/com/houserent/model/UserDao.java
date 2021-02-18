@@ -83,5 +83,11 @@ public class UserDao {
 	public void setActive(boolean active) {
 		this.active = active;
 	}
+	@Override
+	public String toString() {
+		return "UserDao [id=" + id + ", email=" + email + ", gender=" + gender + ", mobileNumber=" + mobileNumber
+				+ ", active=" + active + ", occupation=" + occupation + ", password=" + password + ", userName="
+				+ userName + ", role_id=" + role_id + ", address_id=" + address_id + "]";
+	}
 	
 }
